@@ -2,7 +2,6 @@ import inquirer from 'inquirer';
 import Manager from './lib/manager.js';
 import Engineer from './lib/engineer.js';
 import Intern from './lib/intern.js';
-// import htmlCreator from './lib/htmlCreator.js';
 import fs from 'fs';
 
 
@@ -177,14 +176,8 @@ const selector = selectorList => { inquirer.prompt(selectorList).then((answer) =
                 selector(selectorList);
             })
             break;
-        case "I've finished, please creat org chart":
+        case "I've finished, please create org chart":
             console.log(`\n\n`);
-            // console.log(arr[0].name);
-            // console.log(arr[0].email);
-            // console.log(arr[0].office);
-            // console.log(arr[1].gitHub);
-            // console.log(arr[2].school);
-            // console.log(arr)
             const cards = htmlCreator(arr);
             const htmlFinal = generateHtml(teamName, cards);
             fs.writeFile('index.html', htmlFinal, (err) =>
@@ -193,5 +186,3 @@ const selector = selectorList => { inquirer.prompt(selectorList).then((answer) =
             break;
     };
 }) };
-
-// selector(selectorList);
