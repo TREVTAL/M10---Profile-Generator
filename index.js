@@ -178,7 +178,7 @@ const selector = selectorList => { inquirer.prompt(selectorList).then((answer) =
             inquirer.prompt(questionsManager).then((answers) => {
                 // create a new object from Manager class, and set arguments according to user data. objet is added to arr array
                 arr.push(new Manager(answers.name, answers.id, answers.email, answers.officeNumber));
-                console.log(`\n\nThankyou, ${answers.name}'s information has been saved! ${answers.officeNumber}\n\n`);
+                console.log(`\n\nThankyou, ${answers.name}'s information has been saved!\n\n`);
                 // selector is called again to return to employee type options
                 selector(selectorList);
             })
@@ -187,7 +187,7 @@ const selector = selectorList => { inquirer.prompt(selectorList).then((answer) =
             // same as Manager, but prompting Engineer questions and class.
             inquirer.prompt(questionsEngineer).then((answers) => {
                 arr.push(new Engineer(answers.name, answers.id, answers.email, answers.gitHubUser));
-                console.log(`\n\nThankyou, ${answers.name}'s information has been saved!${answers.gitHubUser}\n\n`);
+                console.log(`\n\nThankyou, ${answers.name}'s information has been saved!\n\n`);
                 selector(selectorList);
             })
             break;
